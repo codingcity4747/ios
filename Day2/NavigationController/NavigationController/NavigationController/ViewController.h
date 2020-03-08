@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "ClearTextDelegate.h"
+@interface ViewController : UIViewController <ClearTextDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 

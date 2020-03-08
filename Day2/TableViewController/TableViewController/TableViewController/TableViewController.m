@@ -21,24 +21,16 @@
     detailViewController =
     [self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
     males =[NSMutableArray arrayWithCapacity:3];
-    [males addObject:@"Ashraf"];
-    [males addObject:@"Ahmed"];
-    [males addObject:@"Mohamed"];
+    [males addObject:[[Friend alloc] setName:@"Ashraf" setEmail:@"Ashraf.mohamed4728@gmail.com" setPhone:@"0123456778" setAge:24]];
+    [males addObject:[[Friend alloc] setName:@"Ahmed" setEmail:@"Ahmed.Mohsen@gmail.com" setPhone:@"0123875847"setAge:35]];
+    [males addObject:[[Friend alloc] setName:@"Mohamed" setEmail:@"Mohamed.Ibrahim@gmail.com" setPhone:@"0193847483" setAge:20]];
 
     females =[NSMutableArray arrayWithCapacity:3];
-    [females addObject:@"Mona"];
-    [females addObject:@"Esraa"];
-    [females addObject:@"Eman"];
+    [females addObject:[[Friend alloc] setName:@"Ali" setEmail:@"ALi.eslam@gmail.com" setPhone:@"0123485843" setAge:45]];
+    [females addObject:[[Friend alloc] setName:@"Montaser" setEmail:@"Montaser.biomy@gmail.com" setPhone:@"01234857483" setAge:13]];
+    [females addObject:[[Friend alloc] setName:@"7anafi" setEmail:@"7anafi.elobaha@gmail.com" setPhone:@"01234566" setAge:46]];
     
-    friends = [NSMutableArray<Friend*> arrayWithCapacity:6];
-    [friends addObject:[[Friend alloc] setName:@"Ashraf" setEmail:@"Ashraf.mohamed4728@gmail.com" setPhone:@"0123456778" setAge:24]];
-    
-     [friends addObject:[[Friend alloc] setName:@"Ahmed" setEmail:@"Ahmed.Mohsen@gmail.com" setPhone:@"0123875847"setAge:35]];
-     [friends addObject:[[Friend alloc] setName:@"Mohamed" setEmail:@"Mohamed.Ibrahim@gmail.com" setPhone:@"0193847483" setAge:20]];
-     [friends addObject:[[Friend alloc] setName:@"Ali" setEmail:@"ALi.eslam@gmail.com" setPhone:@"0123485843" setAge:45]];
-     [friends addObject:[[Friend alloc] setName:@"Montaser" setEmail:@"Montaser.biomy@gmail.com" setPhone:@"01234857483" setAge:13]];
-     [friends addObject:[[Friend alloc] setName:@"7anafi" setEmail:@"7anafi.elobaha@gmail.com" setPhone:@"01234566" setAge:46]];
-    
+   
     
  
 }
@@ -65,27 +57,26 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell* cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     
     switch (indexPath.section) {
         case 0:
-            cell.textLabel.text = [males objectAtIndex:indexPath.row];
+            cell.textLabel.text = [males objectAtIndex:indexPath.row].name;
+            [cell.imageView setImage:[UIImage imageNamed:@"img.png"]];
             break;
             
         case 1:
-            cell.textLabel.text = [females objectAtIndex:indexPath.row];
+            cell.textLabel.text = [females objectAtIndex:indexPath.row].name;
+            
+            [cell.imageView setImage:[UIImage imageNamed:@"img.png"]];
             break;
     }
     
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row%2==0){
-        return 90;
-    }
-    return 40;
-}
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     NSString* header = @"";
@@ -153,15 +144,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.section) {
-        case 0:
-            printf("%d",indexPath.row);
-            Friend* friend = [friends objectAtIndex:indexPath.row];
+        case 0:{
+            Friend* friend = [males objectAtIndex:indexPath.row];
             [detailViewController displayFriend:friend];
-            [self.navigationController pushViewController:detailViewController animated:YES];
+        [self.navigationController pushViewController:detailViewController animated:YES];}
             break;
-    
-            [detailViewController displayFriend:[friends objectAtIndex:indexPath.row+3]];
-            [self.navigationController pushViewController:detailViewController animated:YES];
+        case 1:{
+            Friend* friend = [females objectAtIndex:indexPath.row];
+            [detailViewController displayFriend:friend];
+            [self.navigationController pushViewController:detailViewController animated:YES];}
             break;
     }
     

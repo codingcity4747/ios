@@ -16,6 +16,7 @@
 		DC58D3B824143A41009A4095 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3B724143A41009A4095 /* TableViewController.m */; };
 		DC58D3BB241444CA009A4095 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3BA241444CA009A4095 /* DetailViewController.m */; };
 		DC58D3BF2414453C009A4095 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3BE2414453C009A4095 /* Friend.m */; };
+		DC5CD3C424152B43002D792F /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5CD3C324152B42002D792F /* img.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DC58D3BC241444F8009A4095 /* displayDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = displayDelegate.h; sourceTree = "<group>"; };
 		DC58D3BD2414453C009A4095 /* Friend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
 		DC58D3BE2414453C009A4095 /* Friend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		DC5CD3C324152B42002D792F /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img.png; path = ../../../../../../../Downloads/img.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		DC58D39C24143820009A4095 /* TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DC5CD3C324152B42002D792F /* img.png */,
 				DC58D39D24143821009A4095 /* AppDelegate.h */,
 				DC58D39E24143821009A4095 /* AppDelegate.m */,
 				DC58D3A024143821009A4095 /* SceneDelegate.h */,
@@ -148,6 +151,7 @@
 				DC58D3AD24143824009A4095 /* LaunchScreen.storyboard in Resources */,
 				DC58D3AA24143824009A4095 /* Assets.xcassets in Resources */,
 				DC58D3A824143821009A4095 /* Main.storyboard in Resources */,
+				DC5CD3C424152B43002D792F /* img.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

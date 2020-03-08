@@ -22,8 +22,12 @@
     NSString* input = _textField.text;
     SecondViewController* second = [self.storyboard instantiateViewControllerWithIdentifier:@"second"];
     second.value = [@"Hello " stringByAppendingString:input];
+    second.clearTextDelegator = self;
     [self.navigationController pushViewController:second animated:YES];
 }
-
+-(void)clearText{
+    printf("clearText");
+    _textField.text= @"";
+}
 
 @end

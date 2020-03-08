@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC5CD3C524152E5A002D792F /* ClearTextDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClearTextDelegate.h; sourceTree = "<group>"; };
 		DCC721492414100B00BF5CB5 /* NavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC7214C2414100B00BF5CB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCC7214D2414100B00BF5CB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 				DCC7215E2414101000BF5CB5 /* main.m */,
 				DCC721652414117C00BF5CB5 /* SecondViewController.h */,
 				DCC721662414117C00BF5CB5 /* SecondViewController.m */,
+				DC5CD3C524152E5A002D792F /* ClearTextDelegate.h */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";

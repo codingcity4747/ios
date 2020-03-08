@@ -23,6 +23,7 @@
 }
 -(void)doneAction{
     printf(@"Done\n");
+    [self.clearTextDelegator clearText];
     [self.navigationController popViewControllerAnimated:YES];
 }
 /*

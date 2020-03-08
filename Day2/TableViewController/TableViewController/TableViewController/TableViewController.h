@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TableViewController : UITableViewController
 
-@property NSMutableArray *males, *females;
+@property NSMutableArray<Friend*> *males, *females;
 @property NSMutableArray<Friend*> *friends;
 @end
 
