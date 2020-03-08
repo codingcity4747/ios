@@ -10,6 +10,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-
+@property UIWindow *window;
 @end
 

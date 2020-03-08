@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ClearTextDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondViewController : UIViewController
 @property NSString* value;
 @property (weak, nonatomic) IBOutlet UILabel *display;
-
+@property id<ClearTextDelegate>clearTextDelegator;
 @end
 
 NS_ASSUME_NONNULL_END
