@@ -117,9 +117,12 @@
         switch(indexPath.section){
             case 0:
                 [males removeObjectAtIndex:indexPath.row];
+                [friends removeObjectAtIndex:indexPath.row];
                 break;
             case 1 :
                 [females removeObjectAtIndex:indexPath.row];
+                [friends removeObjectAtIndex:indexPath.row+[friends count]/2];
+
                 break;
         }
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -160,7 +163,7 @@
             [self.navigationController pushViewController:detailViewController animated:YES];
             break;
     
-            [detailViewController displayFriend:[friends objectAtIndex:indexPath.row+3]];
+            [detailViewController displayFriend:[friends objectAtIndex:indexPath.row+[friends count]/2]];
             [self.navigationController pushViewController:detailViewController animated:YES];
             break;
     }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DC58D39F24143821009A4095 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D39E24143821009A4095 /* AppDelegate.m */; };
-		DC58D3A224143821009A4095 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3A124143821009A4095 /* SceneDelegate.m */; };
 		DC58D3A824143821009A4095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC58D3A624143821009A4095 /* Main.storyboard */; };
 		DC58D3AA24143824009A4095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC58D3A924143824009A4095 /* Assets.xcassets */; };
 		DC58D3AD24143824009A4095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC58D3AB24143824009A4095 /* LaunchScreen.storyboard */; };
@@ -22,8 +21,6 @@
 		DC58D39A24143820009A4095 /* TableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC58D39D24143821009A4095 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC58D39E24143821009A4095 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DC58D3A024143821009A4095 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		DC58D3A124143821009A4095 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		DC58D3A724143821009A4095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC58D3A924143824009A4095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC58D3AC24143824009A4095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,10 +67,8 @@
 			children = (
 				DC58D39D24143821009A4095 /* AppDelegate.h */,
 				DC58D39E24143821009A4095 /* AppDelegate.m */,
-				DC58D3A024143821009A4095 /* SceneDelegate.h */,
 				DC58D3B624143A41009A4095 /* TableViewController.h */,
 				DC58D3B724143A41009A4095 /* TableViewController.m */,
-				DC58D3A124143821009A4095 /* SceneDelegate.m */,
 				DC58D3A624143821009A4095 /* Main.storyboard */,
 				DC58D3A924143824009A4095 /* Assets.xcassets */,
 				DC58D3AB24143824009A4095 /* LaunchScreen.storyboard */,
@@ -162,7 +157,6 @@
 				DC58D39F24143821009A4095 /* AppDelegate.m in Sources */,
 				DC58D3B024143824009A4095 /* main.m in Sources */,
 				DC58D3BF2414453C009A4095 /* Friend.m in Sources */,
-				DC58D3A224143821009A4095 /* SceneDelegate.m in Sources */,
 				DC58D3B824143A41009A4095 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TableViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +316,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TableViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
