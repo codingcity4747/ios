@@ -16,9 +16,13 @@
 		DC58D3B824143A41009A4095 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3B724143A41009A4095 /* TableViewController.m */; };
 		DC58D3BB241444CA009A4095 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3BA241444CA009A4095 /* DetailViewController.m */; };
 		DC58D3BF2414453C009A4095 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = DC58D3BE2414453C009A4095 /* Friend.m */; };
+		E24255E4E4890DA456B9B891 /* Pods_TableViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC46B7D57F27261214657002 /* Pods_TableViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		472411542E431BFF9CF5AD80 /* Pods-TableViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewController.release.xcconfig"; path = "Target Support Files/Pods-TableViewController/Pods-TableViewController.release.xcconfig"; sourceTree = "<group>"; };
+		9805BB62ED4C77F586045BED /* Pods-TableViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewController.debug.xcconfig"; path = "Target Support Files/Pods-TableViewController/Pods-TableViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		BC46B7D57F27261214657002 /* Pods_TableViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6253387241552900042D5EE /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 		DC58D39A24143820009A4095 /* TableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC58D39D24143821009A4095 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,17 +46,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24255E4E4890DA456B9B891 /* Pods_TableViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B42C5BAB89151BFA7CC4438 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9805BB62ED4C77F586045BED /* Pods-TableViewController.debug.xcconfig */,
+				472411542E431BFF9CF5AD80 /* Pods-TableViewController.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DC58D39124143820009A4095 = {
 			isa = PBXGroup;
 			children = (
 				DC58D39C24143820009A4095 /* TableViewController */,
 				DC58D39B24143820009A4095 /* Products */,
+				4B42C5BAB89151BFA7CC4438 /* Pods */,
+				EE59471A6C24D13EB3CBC293 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +103,14 @@
 			path = TableViewController;
 			sourceTree = "<group>";
 		};
+		EE59471A6C24D13EB3CBC293 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC46B7D57F27261214657002 /* Pods_TableViewController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC58D3B324143824009A4095 /* Build configuration list for PBXNativeTarget "TableViewController" */;
 			buildPhases = (
+				117E5D1B1C0C5D48272E50CD /* [CP] Check Pods Manifest.lock */,
 				DC58D39624143820009A4095 /* Sources */,
 				DC58D39724143820009A4095 /* Frameworks */,
 				DC58D39824143820009A4095 /* Resources */,
+				7D6F53BA60FCAAD7D38F00B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +178,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		117E5D1B1C0C5D48272E50CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TableViewController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D6F53BA60FCAAD7D38F00B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableViewController/Pods-TableViewController-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableViewController/Pods-TableViewController-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TableViewController/Pods-TableViewController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC58D39624143820009A4095 /* Sources */ = {
@@ -299,6 +368,7 @@
 		};
 		DC58D3B424143824009A4095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9805BB62ED4C77F586045BED /* Pods-TableViewController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,6 +386,7 @@
 		};
 		DC58D3B524143824009A4095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 472411542E431BFF9CF5AD80 /* Pods-TableViewController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

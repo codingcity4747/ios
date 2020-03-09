@@ -16,9 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pre)];
+
+    left.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:left];
     // Do any additional setup after loading the view.
 }
 
+-(void)pre{
+    [self dismissViewControllerAnimated:YES completion:^(void){
+        printf("dismiss view three");
+    }];
+}
 /*
 #pragma mark - Navigation
 
@@ -29,4 +38,6 @@
 }
 */
 
+- (IBAction)loadThirdView:(id)sender {
+}
 @end

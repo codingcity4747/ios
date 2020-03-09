@@ -8,6 +8,8 @@
 
 #import "TableViewController.h"
 #import "DetailViewController.h"
+#import <SDWebImage/SDWebImage.h>
+
 @interface TableViewController ()
 
 @end
@@ -63,13 +65,15 @@
     switch (indexPath.section) {
         case 0:
             cell.textLabel.text = [males objectAtIndex:indexPath.row].name;
-            [cell.imageView setImage:[UIImage imageNamed:@"img.png"]];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png"]
+            placeholderImage:[UIImage imageNamed:@"img.png"]];
             break;
             
         case 1:
             cell.textLabel.text = [females objectAtIndex:indexPath.row].name;
-            
-            [cell.imageView setImage:[UIImage imageNamed:@"img.png"]];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT7WGOjShlnlpZJ8riRToRH6hGSiwITZ6aGr0r0xdwRuoyHBKWB"]
+            placeholderImage:[UIImage imageNamed:@"img.png"]];
+            //[cell.imageView setImage:[UIImage imageNamed:@"img.png"]];
             break;
     }
     

@@ -16,9 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(previous)];
+    right.direction=UISwipeGestureRecognizerDirectionRight;
+    
+    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(next)];
+    left.direction=UISwipeGestureRecognizerDirectionRight;
+    
+    [self.view addGestureRecognizer:right];
     // Do any additional setup after loading the view.
 }
 
+-(void)previous{
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
+}
 
+-(void)next{
+    ThirdViewController *third = [self.storyboard instantiateViewControllerWithIdentifier:@"third"];
+    [self presentViewController:third animated:YES completion:nil];
+}
 
+- (IBAction)loadThird:(id)sender {
+    ThirdViewController *third = [self.storyboard instantiateViewControllerWithIdentifier:@"third"];
+    [third setModalPresentationStyle:UIModalPresentationFullScreen];
+    [self presentViewController:third animated:YES completion:nil];
+}
 @end
