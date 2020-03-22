@@ -40,7 +40,7 @@
     }else if (charCounter == len){
         label.text =@"Input is Character";
     }else if(symbolCounter == len){
-        label.text =@"Input is Symbol";
+        label.text  =@"Input is Symbol";
     }else {
         
         if(numCounter>0){
