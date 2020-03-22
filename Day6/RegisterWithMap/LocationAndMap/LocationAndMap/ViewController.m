@@ -30,6 +30,13 @@
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     CLLocation *lastLocation = [locations lastObject];
+    PinAnnotation *pin = [PinAnnotation new];
+    [pin setCoordinate:lastLocation.coordinate];
+    pin.title = @"MAD";
+    pin.subtitle = @"iti";
+
+    [_myMap removeAnnotations:[_myMap annotations]];
+    [_myMap addAnnotation:pin];
     printf("lon:%f  lat:%f\n",lastLocation.coordinate.longitude,lastLocation.coordinate.latitude);
     [_myMap setCenterCoordinate:lastLocation.coordinate];
     lat = lastLocation.coordinate.latitude;
