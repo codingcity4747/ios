@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <NSURLConnectionDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 - (IBAction)login:(id)sender;
 

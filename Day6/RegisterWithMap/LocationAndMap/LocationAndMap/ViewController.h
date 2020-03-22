@@ -15,6 +15,7 @@
 @property RegistrationViewController *delegator;
 -(void)setDelegate:(RegistrationViewController*)delegate;
 - (IBAction)send:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end
 

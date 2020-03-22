@@ -51,9 +51,13 @@
 
     [_myMap removeAnnotations:[_myMap annotations]];
     [_myMap addAnnotation:pin];
+   
+    
+    
+}
+
+- (IBAction)done:(id)sender {
     [_delegator setLongitude:lon setLatitude:lat];
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
 }
 @end

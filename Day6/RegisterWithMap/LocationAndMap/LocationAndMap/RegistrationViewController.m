@@ -9,7 +9,7 @@
 #import "RegistrationViewController.h"
 #import "ImageListViewController.h"
 #import "ViewController.h"
-static NSString *baseUrl  = @"http://jets.iti.gov.eg/FriendsApp/services/user/register?";
+
 @interface RegistrationViewController ()
 
 @end
@@ -26,6 +26,10 @@ static NSString *baseUrl  = @"http://jets.iti.gov.eg/FriendsApp/services/user/re
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    name = @"";
+    age = @"";
+    phone =@"";
+    _imgUrl = @"";
     
 }
 
@@ -42,6 +46,10 @@ static NSString *baseUrl  = @"http://jets.iti.gov.eg/FriendsApp/services/user/re
 }
 
 - (IBAction)done:(id)sender {
+    if([name isEqualToString:@""]||[phone isEqualToString:@""]||[age isEqualToString:@""]){
+        _state.text = @"Missing Input";
+    }
+    NSString *baseUrl  = @"http://jets.iti.gov.eg/FriendsApp/services/user/register?";
     name = _name.text;
     phone = _phone.text;
     age = _age.text;
@@ -57,7 +65,7 @@ static NSString *baseUrl  = @"http://jets.iti.gov.eg/FriendsApp/services/user/re
     
     baseUrl = [baseUrl stringByAppendingString:[phone stringByAppendingString:@"&"]];
     
-    baseUrl = [baseUrl stringByAppendingString:@"age"];
+    baseUrl = [baseUrl stringByAppendingString:@"age="];
     
     baseUrl = [baseUrl stringByAppendingString:[age stringByAppendingString:@"&"]];
     
@@ -109,11 +117,18 @@ static NSString *baseUrl  = @"http://jets.iti.gov.eg/FriendsApp/services/user/re
     [myData appendData:data];
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    _state.text = @"Error";
+}
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection{
     printf("finish response");
     NSString *resultString = [[NSString alloc] initWithData:myData encoding:NSUTF8StringEncoding];
     if([resultString containsString:@"SUCCESS"]){
     _state.text = @"SUCCESS";
+    }else{
+        _state.text = @"FAUILER";
+
     }
     
 }

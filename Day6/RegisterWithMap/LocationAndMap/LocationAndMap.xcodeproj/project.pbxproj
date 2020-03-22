@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC4F8FFB2427FEC9001FF19C /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4F8FFA2427FEC9001FF19C /* DetailsViewController.m */; };
 		DC5082082427964400970787 /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5082072427964400970787 /* PinAnnotation.m */; };
 		DC6B430124275D94000DB39E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6B430024275D94000DB39E /* AppDelegate.m */; };
-		DC6B430424275D94000DB39E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6B430324275D94000DB39E /* SceneDelegate.m */; };
 		DC6B430724275D94000DB39E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6B430624275D94000DB39E /* ViewController.m */; };
 		DC6B430A24275D94000DB39E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6B430824275D94000DB39E /* Main.storyboard */; };
 		DC6B430C24275D95000DB39E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6B430B24275D95000DB39E /* Assets.xcassets */; };
@@ -25,13 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC4F8FF92427FEC9001FF19C /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		DC4F8FFA2427FEC9001FF19C /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		DC4F8FFC2427FFD8001FF19C /* DetailsDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsDelegate.h; sourceTree = "<group>"; };
 		DC5082062427964400970787 /* PinAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinAnnotation.h; sourceTree = "<group>"; };
 		DC5082072427964400970787 /* PinAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinAnnotation.m; sourceTree = "<group>"; };
 		DC6B42FC24275D94000DB39E /* LocationAndMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationAndMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6B42FF24275D94000DB39E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC6B430024275D94000DB39E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DC6B430224275D94000DB39E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		DC6B430324275D94000DB39E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		DC6B430524275D94000DB39E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DC6B430624275D94000DB39E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DC6B430924275D94000DB39E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,8 +91,6 @@
 				DC6B431E2427757D000DB39E /* img.jpg */,
 				DC6B42FF24275D94000DB39E /* AppDelegate.h */,
 				DC6B430024275D94000DB39E /* AppDelegate.m */,
-				DC6B430224275D94000DB39E /* SceneDelegate.h */,
-				DC6B430324275D94000DB39E /* SceneDelegate.m */,
 				DC6B430524275D94000DB39E /* ViewController.h */,
 				DC6B430624275D94000DB39E /* ViewController.m */,
 				DC6B430824275D94000DB39E /* Main.storyboard */,
@@ -113,6 +112,9 @@
 				DC6B4331242787FF000DB39E /* User.m */,
 				DC5082062427964400970787 /* PinAnnotation.h */,
 				DC5082072427964400970787 /* PinAnnotation.m */,
+				DC4F8FF92427FEC9001FF19C /* DetailsViewController.h */,
+				DC4F8FFA2427FEC9001FF19C /* DetailsViewController.m */,
+				DC4F8FFC2427FFD8001FF19C /* DetailsDelegate.h */,
 			);
 			path = LocationAndMap;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 			files = (
 				DC5082082427964400970787 /* PinAnnotation.m in Sources */,
 				DC6B430724275D94000DB39E /* ViewController.m in Sources */,
+				DC4F8FFB2427FEC9001FF19C /* DetailsViewController.m in Sources */,
 				DC6B432524277A25000DB39E /* RegistrationViewController.m in Sources */,
 				DC6B433224278800000DB39E /* User.m in Sources */,
 				DC6B432D24277E24000DB39E /* ImageListViewController.m in Sources */,
@@ -205,7 +208,6 @@
 				DC6B4322242779E9000DB39E /* WelcomeViewViewController.m in Sources */,
 				DC6B432824277A4B000DB39E /* LoginViewController.m in Sources */,
 				DC6B431224275D95000DB39E /* main.m in Sources */,
-				DC6B430424275D94000DB39E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
