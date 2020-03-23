@@ -104,8 +104,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dDc-JI-Rp4"/>
                         <segue destination="cLe-gn-M1l" kind="relationship" relationship="viewControllers" id="4sB-90-2UU"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Wku-cw-zD3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rx3-fX-VoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
