@@ -8,24 +8,32 @@
 
 #import "AddTaskViewController.h"
 //task state
-NSString* const TODO = @"ToDo";
-NSString* const IN_PROGRESS = @"InProgress";
-NSString* const DONE = @"Done";
-//task priority
-NSString* const HIGH = @"High";
-NSString* const MEDIUM = @"Medium";
-NSString* const LOW = @"Low";
+
 @interface AddTaskViewController ()
 
 @end
-
-@implementation AddTaskViewController
-@synthesize title,description,priority,state,date;
+//   NSString*  _HIGH = @"High";
+//   NSString*  _MEDIUM = @"Medium";
+//   NSString*  _LOW = @"Low";
+//   NSString*  TODO = @"ToDo";
+//   NSString*  IN_PROGRESS = @"InProgress";
+//   NSString*  DONE = @"Done";
+@implementation AddTaskViewController{
+   
+    NSString* selectedPriority,*selectedState;
+    BOOL isEditied;
+    NSUInteger editTaskPosition;
+}
+@synthesize titleTextField,descriptionTextField,priority,state,date ,userDefaultManager;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    isEditied = NO;
+    userDefaultManager =[UserDefaultManager sharedInstance];
+    selectedState = @"ToDo";
+    selectedPriority = @"Medium";
     // Do any additional setup after loading the view.
 }
+
 
 
 
@@ -47,31 +55,129 @@ NSString* const LOW = @"Low";
     if(pickerView.tag == 1){
         switch(row){
             case 0:
-                rowLabel = HIGH;
+                rowLabel = @"Medium";
                 break;
             case 1 :
-                rowLabel = MEDIUM;
+                rowLabel = @"Low";
                 break;
             case 2 :
-                rowLabel = LOW;
+                rowLabel = @"High";
                 break;
         }
     }else{
-        
+        switch(row){
+            case 0:
+                rowLabel = @"ToDo";
+                break;
+            case 1 :
+                rowLabel = @"InProgress";
+                break;
+            case 2 :
+                rowLabel = @"Done";
+                break;
+        }
     }
     
+    return rowLabel;
 }
-- (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component API_AVAILABLE(ios(6.0)) API_UNAVAILABLE(tvos){
-    
-} // attributed title is favored if both methods are implemented
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view API_UNAVAILABLE(tvos){
-    
-}
+
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component API_UNAVAILABLE(tvos){
-    
+    if(pickerView.tag ==1){
+    switch(row){
+            case 0:
+                selectedPriority = @"Medium";
+                break;
+            case 1 :
+            selectedPriority = @"Low";
+                break;
+            case 2 :
+                selectedPriority = @"High";
+                break;
+        }
+    }else{
+        switch(row){
+            case 0:
+                selectedState = @"ToDo";
+                break;
+            case 1 :
+                selectedState = @"InProgress";
+                break;
+            case 2 :
+                selectedState = @"Done";
+                break;
+        }
+    }
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+-(void)editTask:(Task*)task position:(NSUInteger)position{
+    editTaskPosition = position;
+    printf("from edit \n");
+    [task toString];
+    titleTextField.text = task.title;
+    descriptionTextField.text=task.desc;
+    NSInteger *stateIndecator = [self getStateIndegator:task];
+    [state selectRow:stateIndecator inComponent:0 animated:YES];
+    NSInteger *priorityIndecator = [self getPriorityIndegator:task];
+    [state selectRow:priorityIndecator inComponent:0 animated:YES];
+    isEditied = YES;
+}
+-(NSInteger)getStateIndegator:(Task*)task{
+    NSString* state = task.state;
+    if([state isEqualToString:@"ToDo"]){
+        return 0;
+    }else if([state isEqualToString:@"InProgress"]){
+        return 1;
+    }else{
+        return 2;
+    }
+}
+-(NSInteger)getPriorityIndegator:(Task*)task{
+    NSString* priority = task.priority;
+    if([priority isEqualToString:@"High"]){
+        return 2;
+    }else if([priority isEqualToString:@"Low"]){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+-(BOOL)checkInput{
+    NSString *title = self.titleTextField.text;
+    NSString *desc = self.descriptionTextField.text;
+    NSString *priority = selectedPriority;
+    NSString *state = selectedState;
+    NSString *date = self.date.date.description ;
+    
+    if([title isEqualToString:@""] ||[desc isEqualToString:@""]||[priority isEqualToString:@""]||[state isEqualToString:@""]|[date isEqualToString:@""]){
+        return false;
+    }
+    
+    Task *newTask = [[Task alloc] initSetTitle:title setDesc:desc setState:state setPriority:priority setTaskDate:date];
+    [newTask toString];
+    if(isEditied){
+        printf("@@@ isEditied @@@");
+        //[userDefaultManager updateTask:newTask withPosition:editTaskPosition];
+        return YES;
+    }else{
+        [userDefaultManager addTask:newTask];
+        return YES;
+    }
+}
 - (IBAction)doneBtn:(id)sender {
+    isEditied = NO;
+    BOOL isTaskAdded = [self checkInput];
+       if(isTaskAdded){
+           [self.navigationController popViewControllerAnimated:YES];
+       }else{
+           UIAlertView *wrongInputAlert = [[UIAlertView alloc] initWithTitle:@"Wait.." message:@"I think you forgot to type an important Information" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+           [wrongInputAlert show];
+       }
 }
 @end

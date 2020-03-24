@@ -63,7 +63,7 @@ NSString* const TASKS_ARRAY_KEY = @"Tasks";
     NSMutableArray<NSData*>*tempTaskArray = [[userDefault objectForKey:TASKS_ARRAY_KEY] mutableCopy];
     NSData* taskAsData = [self convertTaskToData:newTask];
     [tempTaskArray replaceObjectAtIndex:position withObject:taskAsData];
-    //[userDefault removeObjectForKey:TASKS_ARRAY_KEY];
+    [userDefault removeObjectForKey:TASKS_ARRAY_KEY];
     [userDefault setObject:tempTaskArray forKey:TASKS_ARRAY_KEY];
     //[userDefault synchronize];
 }

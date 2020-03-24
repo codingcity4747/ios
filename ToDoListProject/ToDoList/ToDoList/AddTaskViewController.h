@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
+#import "UserDefaultManager.h"
+@interface AddTaskViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate,UIAlertViewDelegate>
 
 
-@interface AddTaskViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
+@property UserDefaultManager *userDefaultManager;
 - (IBAction)doneBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *titleTextFiedl;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionTextFiedl;
+-(void)editTask:(Task*)task position:(NSUInteger)position;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *priority;
 @property (weak, nonatomic) IBOutlet UIDatePicker *date;

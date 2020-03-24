@@ -16,14 +16,7 @@ NSString* const  TASK_KEY_KEY = @"key";
 NSString* const  STATE_KEY = @"state";
 NSString* const  PRIORITY_KEY = @"priority";
 NSString* const  DATE_KEY = @"date";
-//task state
-NSString* const TODO = @"TODO";
-NSString* const IN_PROGRESS = @"IN_PROGRESS";
-NSString* const DONE = @"DONE";
-//task priority
-NSString* const HIGH = @"HIGH";
-NSString* const MEDIUM = @"MEDIUM";
-NSString* const LOW = @"LOW";
+
 @implementation Task
 
 @synthesize title,desc,key,taskDate,priority,state;

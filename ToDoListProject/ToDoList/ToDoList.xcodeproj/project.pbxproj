@@ -10,7 +10,6 @@
 		DC50551F242946CD00B5300E /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC50551E242946CD00B5300E /* AddTaskViewController.m */; };
 		DC66E5862428CCB0001DA2E1 /* UserDefaultManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC66E5852428CCB0001DA2E1 /* UserDefaultManager.m */; };
 		DC66E5892428CDD3001DA2E1 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = DC66E5882428CDD3001DA2E1 /* Task.m */; };
-		DC66E58B24290BF0001DA2E1 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = DC66E58A24290BF0001DA2E1 /* Constant.m */; };
 		DC7D6F4D2428BC7200566AC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D6F4C2428BC7200566AC4 /* AppDelegate.m */; };
 		DC7D6F532428BC7200566AC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7D6F522428BC7200566AC4 /* ViewController.m */; };
 		DC7D6F562428BC7200566AC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7D6F542428BC7200566AC4 /* Main.storyboard */; };
@@ -30,7 +29,6 @@
 		DC66E5852428CCB0001DA2E1 /* UserDefaultManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultManager.m; sourceTree = "<group>"; };
 		DC66E5872428CDD3001DA2E1 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		DC66E5882428CDD3001DA2E1 /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
-		DC66E58A24290BF0001DA2E1 /* Constant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		DC7D6F482428BC7200566AC4 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7D6F4B2428BC7200566AC4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC7D6F4C2428BC7200566AC4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				DC66E5852428CCB0001DA2E1 /* UserDefaultManager.m */,
 				DC66E5872428CDD3001DA2E1 /* Task.h */,
 				DC66E5882428CDD3001DA2E1 /* Task.m */,
-				DC66E58A24290BF0001DA2E1 /* Constant.m */,
 				DC50551D242946CD00B5300E /* AddTaskViewController.h */,
 				DC50551E242946CD00B5300E /* AddTaskViewController.m */,
 			);
@@ -182,7 +179,6 @@
 				DC7D6F532428BC7200566AC4 /* ViewController.m in Sources */,
 				DC7D6F752428C29A00566AC4 /* DoneViewController.m in Sources */,
 				DC7D6F6F2428C26C00566AC4 /* InProgressViewController.m in Sources */,
-				DC66E58B24290BF0001DA2E1 /* Constant.m in Sources */,
 				DC7D6F692428C22500566AC4 /* DateViewController.m in Sources */,
 				DC50551F242946CD00B5300E /* AddTaskViewController.m in Sources */,
 				DC7D6F4D2428BC7200566AC4 /* AppDelegate.m in Sources */,

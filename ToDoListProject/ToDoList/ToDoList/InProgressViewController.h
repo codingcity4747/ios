@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserDefaultManager.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface InProgressViewController : UIViewController
+@interface InProgressViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property UserDefaultManager* userDefaultManager;
+@property NSMutableArray<Task*> *tasks;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-NS_ASSUME_NONNULL_END
